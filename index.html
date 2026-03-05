@@ -14,7 +14,6 @@
   --cyan: #00f0ff;
   --cyan-dim: rgba(0,240,255,0.1);
   --green: #00ff88;
-  --orange: #ff6b35;
   --text: #d1d1d1;
   --muted: #666;
   --white: #ffffff;
@@ -31,7 +30,7 @@ body {
   cursor: default;
 }
 
-/* === INTERAKTIVNI KURSOR === */
+/* === KURSOR === */
 .cursor { width:8px; height:8px; background:var(--cyan); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transition:transform 0.1s; mix-blend-mode:screen; }
 .cursor-ring { width:35px; height:35px; border:1px solid rgba(0,240,255,0.3); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transition:all 0.2s ease; }
 
@@ -43,9 +42,8 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 .logo { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--cyan); text-decoration: none; font-weight: 700; }
-.logo span { color: var(--muted); }
 
-/* === ISPRAVLJEN GRID SISTEM === */
+/* === GRID SISTEM === */
 main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
 .bento {
   display: grid; 
@@ -78,35 +76,31 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
 .c-lotos      { grid-column: 5/9; }
 .c-booking    { grid-column: 9/13; }
 
-/* === HERO === */
+/* ELEMENTI KARTICA */
 .hero-tag { font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 12px; margin-bottom: 20px; display: block; letter-spacing: 2px; }
 .hero-h1 { font-size: clamp(32px, 5vw, 54px); color: var(--white); line-height: 1.1; font-weight: 800; margin-bottom: 24px; }
 .hero-h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: var(--cyan); }
 .hero-p { max-width: 500px; line-height: 1.6; color: var(--muted); font-size: 18px; margin-bottom: 30px; }
 
-/* === AI SLIDER SA TVOJIM SLIKAMA === */
-.slider-container { flex-grow: 1; min-height: 300px; position: relative; cursor: ew-resize; border-radius: 16px; overflow: hidden; background: #000; margin-top: 20px; }
+/* AI SLIDER - TVOJE SLIKE */
+.slider-container { flex-grow: 1; min-height: 320px; position: relative; cursor: ew-resize; border-radius: 16px; overflow: hidden; background: #000; margin-top: 20px; }
 .slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
 
 .before-img { background-image: url('pre.png'); }
-.after-img { background-image: url('posle.png'); width: 50%; border-right: 2px solid var(--cyan); }
+.after-img { background-image: url('posle.png'); width: 50%; border-right: 2px solid var(--cyan); z-index: 2; }
 
-.label { position: absolute; bottom: 20px; background: rgba(0,0,0,0.8); padding: 4px 10px; font-size: 10px; font-family: 'JetBrains Mono', monospace; border-radius: 4px; z-index: 10; }
+.label { position: absolute; bottom: 20px; background: rgba(0,0,0,0.8); padding: 4px 10px; font-size: 10px; font-family: 'JetBrains Mono', monospace; border-radius: 4px; z-index: 10; text-transform: uppercase; }
 
-/* === OSTATAK STILOVA === */
+/* OSTALO */
 .ent-icon { width: 40px; height: 40px; background: var(--cyan-dim); border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--cyan); }
 .ent-h2 { font-size: 20px; color: var(--white); margin-bottom: 12px; }
 .ent-p { font-size: 14px; color: var(--muted); line-height: 1.5; }
-.ent-list { margin-top: 15px; list-style: none; }
-.ent-list li { font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #888; }
-.ent-list li::before { content: '→'; color: var(--cyan); }
 
 .video-placeholder { width: 100%; height: 150px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px dashed var(--muted); display: flex; align-items: center; justify-content: center; margin-top: auto; }
 .play-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--cyan); display: flex; align-items: center; justify-content: center; color: var(--cyan); }
 
 .project-site { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); margin-bottom: 8px; }
 .project-h3 { font-size: 22px; color: var(--white); margin-bottom: 12px; }
-.project-p { font-size: 14px; color: var(--muted); line-height: 1.5; margin-bottom: 20px; }
 .tag-container { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
 .project-tag { padding: 4px 12px; background: rgba(255,255,255,0.05); border-radius: 100px; font-size: 10px; text-transform: uppercase; }
 
@@ -140,7 +134,6 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
     <p class="hero-p">Spajam inžinjersku preciznost banking sistema sa modernim AI alatima za kreiranje premium e-commerce iskustava.</p>
     <div style="display: flex; gap: 15px; margin-top: auto;">
         <a href="#projekti" style="padding: 16px 32px; background: var(--cyan); color: #000; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px;">Pogledaj radove</a>
-        <a href="#" style="padding: 16px 32px; border: 1px solid var(--border); color: var(--white); border-radius: 12px; text-decoration: none; font-size: 14px;">GitHub</a>
     </div>
   </div>
 
@@ -150,11 +143,6 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
     </div>
     <h2 class="ent-h2">Enterprise Foundation</h2>
     <p class="ent-p">Iskustvo u razvoju kompleksnih bankarskih sistema garantuje sigurnost svakog projekta.</p>
-    <ul class="ent-list">
-        <li>Mobile Banking Apps</li>
-        <li>Financial Institutions</li>
-        <li>High-load Architectures</li>
-    </ul>
   </div>
 
   <div class="card c-growth reveal" style="flex-direction: row; justify-content: space-between; align-items: center;">
@@ -164,12 +152,12 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
 
   <div class="card c-slider reveal">
     <span class="hero-tag">AI IMAGE GENERATION</span>
-    <h2 class="ent-h2">Od skice do realnosti</h2>
+    <h2 class="ent-h2">Vizuelna Transformacija</h2>
     <div class="slider-container" id="slider">
         <div class="slider-img before-img"></div>
         <div class="slider-img after-img" id="afterImg"></div>
-        <span class="label" style="left: 20px;">RAW PRODUCT</span>
-        <span class="label" style="right: 20px; color: var(--cyan);">AI LIFESTYLE</span>
+        <span class="label" style="left: 20px;">PRE</span>
+        <span class="label" style="right: 20px; color: var(--cyan);">POSLE</span>
     </div>
   </div>
 
@@ -182,24 +170,21 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
     </div>
   </div>
 
-  <div class="card c-marketing reveal" style="background: var(--bg2);">
-    <span class="hero-tag" style="font-size: 9px;">CONVERSION</span>
+  <div class="card c-marketing reveal" style="background: var(--bg2); justify-content: center;">
     <h3 style="color:var(--white); font-size: 16px;">UI/UX Optimizacija</h3>
   </div>
 
-  <div class="card c-ads reveal" style="background: var(--cyan-dim);">
-    <span class="hero-tag" style="font-size: 9px; color: var(--cyan);">CAMPAIGNS</span>
+  <div class="card c-ads reveal" style="background: var(--cyan-dim); justify-content: center;">
     <h3 style="color:var(--cyan); font-size: 16px;">Google Ads Expert</h3>
   </div>
 
   <div class="card c-projects reveal" id="projekti">
-    <h2 style="font-size: 36px; color: var(--white); font-family: 'Instrument Serif'; font-style: italic;">Istaknuti Projekti</h2>
+    <h2 style="font-size: 36px; color: var(--white); font-family: 'Instrument Serif'; font-style: italic;">Projekti</h2>
   </div>
 
   <div class="card c-bear reveal project-card">
     <span class="project-site">bearunderwear.rs</span>
     <h3 class="project-h3">Bear Underwear</h3>
-    <p class="project-p">E-commerce ekosistem sa AI modelima koji su povećali konverziju za 40%.</p>
     <div class="tag-container">
         <span class="project-tag">WooCommerce</span>
         <span class="project-tag">AI Content</span>
@@ -209,7 +194,6 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
   <div class="card c-lotos reveal project-card">
     <span class="project-site">ariljelotos.com</span>
     <h3 class="project-h3">Arilje Lotos</h3>
-    <p class="project-p">Redizajn prodajnog lijevka uz fokus na mobilno iskustvo i brzinu.</p>
     <div class="tag-container">
         <span class="project-tag">Optimization</span>
         <span class="project-tag">UI/UX</span>
@@ -219,7 +203,6 @@ main { max-width: 1300px; margin: 0 auto; padding: 120px 24px 80px; }
   <div class="card c-booking reveal project-card">
     <span class="project-site">github.com/booking</span>
     <h3 class="project-h3">SaaS Booking</h3>
-    <p class="project-p">Custom rješenje za online rezervacije bazirano na Clean Architecture.</p>
     <div class="tag-container">
         <span class="project-tag">.NET 8</span>
         <span class="project-tag">Architecture</span>
@@ -241,7 +224,7 @@ const afterImg = document.getElementById('afterImg');
 slider.addEventListener('mousemove', (e) => {
     const rect = slider.getBoundingClientRect();
     const x = e.clientX - rect.left;
-    const percent = (x / rect.width) * 100;
+    const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
     afterImg.style.width = `${percent}%`;
 });
 
