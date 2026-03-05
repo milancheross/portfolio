@@ -282,8 +282,23 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
 transition: transform .4s ease;
 }
 
-.project-card:hover .project-img{
-transform: scale(1.05);
+./* === PROJECT CARDS FIX (da se sigurno vide i lepo rasporede) === */
+.project-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height: 360px; /* garantuje vidljivost u grid-u */
+}
+
+.project-tags{
+  margin-top:auto; /* tagovi idu na dno */
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.project-tag{
+  margin-right:0; /* jer koristimo gap */
 }
   
 @media (max-width: 980px){
