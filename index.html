@@ -270,13 +270,29 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
 .project-h3{ font-size: 24px; color: var(--white); margin-bottom: 10px; }
 .project-p{ font-size: 14px; color: var(--muted); line-height:1.55; margin-bottom: 18px; flex-grow:1; }
 .project-tag{ display:inline-block; padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10); font-size: 10px; text-transform: uppercase; margin-right: 5px; }
+.project-img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:16px;
+  border:1px solid rgba(255,255,255,.08);
+  }
+.project-img{
+transition: transform .4s ease;
+}
 
+.project-card:hover .project-img{
+transform: scale(1.05);
+}
+  
 @media (max-width: 980px){
   nav{ padding: 14px 18px; }
   main{ padding: 95px 16px 70px; }
   .bento{ grid-template-columns: 1fr; }
   .card{ grid-column: 1 / -1 !important; grid-row: auto !important; }
 }
+
 </style>
 </head>
 
@@ -364,15 +380,44 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
     </section>
 
     <section class="card c-bear reveal project-card">
-      <span class="project-site">bearunderwear.rs</span>
-      <h3 class="project-h3">Bear Underwear</h3>
-      <div class="project-tags"><span class="project-tag">WooCommerce</span></div>
+    
+    <img class="project-img" src="bear-scrn.png" alt="Bear Underwear ecommerce website">
+    
+    <span class="project-site">bearunderwear.rs</span>
+    
+    <h3 class="project-h3">Bear Underwear</h3>
+    
+    <p class="project-p">
+    E-commerce platforma za brend donjeg veša sa optimizovanim WooCommerce sistemom i AI generisanim lifestyle fotografijama proizvoda.
+    </p>
+    
+    <div class="project-tags">
+    <span class="project-tag">WooCommerce</span>
+    <span class="project-tag">AI Images</span>
+    <span class="project-tag">SEO</span>
+    <span class="project-tag">Performance</span>
+    </div>
+    
     </section>
 
     <section class="card c-lotos reveal project-card">
-      <span class="project-site">ariljelotos.com</span>
-      <h3 class="project-h3">Arilje Lotos</h3>
-      <div class="project-tags"><span class="project-tag">UI/UX</span></div>
+    
+    <img class="project-img" src="lotos-scrn.png" alt="Arilje Lotos ecommerce website">
+    
+    <span class="project-site">ariljelotos.com</span>
+    
+    <h3 class="project-h3">Arilje Lotos</h3>
+    
+    <p class="project-p">
+    Redizajn e-commerce sajta sa fokusom na mobilno iskustvo, optimizaciju checkout procesa i jasniju strukturu proizvoda.
+    </p>
+    
+    <div class="project-tags">
+    <span class="project-tag">UI/UX</span>
+    <span class="project-tag">WooCommerce</span>
+    <span class="project-tag">Conversion</span>
+    </div>
+    
     </section>
 
     <section class="card c-booking reveal project-card">
