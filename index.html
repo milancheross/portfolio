@@ -85,12 +85,10 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   display:grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 16px;
-
-  /* BITNO: da se sekcije vide cele */
   grid-auto-rows: minmax(110px, auto);
 }
 
-/* --- CARD (Apple-style) --- */
+/* --- CARD --- */
 .card{
   position:relative;
   border-radius: var(--r);
@@ -98,10 +96,7 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.028));
   border: 1px solid rgba(255,255,255,.08);
   overflow:hidden;
-
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.05) inset,
-    0 20px 55px rgba(0,0,0,.45);
+  box-shadow: 0 1px 0 rgba(255,255,255,.05) inset, 0 20px 55px rgba(0,0,0,.45);
 }
 
 .card::before{
@@ -110,10 +105,6 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   background: radial-gradient(800px 260px at var(--mx, 30%) var(--my, 10%), rgba(0,240,255,.13), transparent 60%);
   opacity: .55;
   pointer-events:none;
-}
-
-.card.soft{
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
 }
 
 .reveal{
@@ -127,12 +118,10 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
 .c-hero      { grid-column: 1 / 9;  grid-row: 1 / 5; }
 .c-enterprise{ grid-column: 9 / 13; grid-row: 1 / 4; }
 .c-growth    { grid-column: 9 / 13; grid-row: 4 / 5; }
-
 .c-slider    { grid-column: 1 / 7;  grid-row: 5 / 11; }
 .c-video     { grid-column: 7 / 13; grid-row: 5 / 9; }
 .c-marketing { grid-column: 7 / 10; grid-row: 9 / 11; }
 .c-ads       { grid-column: 10 / 13;grid-row: 9 / 11; }
-
 .c-projects  { grid-column: 1 / 13; grid-row: 11 / 12; background: transparent; border: none; padding: 0; box-shadow:none; }
 .c-bear      { grid-column: 1 / 5;  grid-row: 12 / 16; }
 .c-lotos     { grid-column: 5 / 9;  grid-row: 12 / 16; }
@@ -181,7 +170,6 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   text-decoration:none;
   font-weight: 800;
   font-size: 14px;
-  letter-spacing:.2px;
 }
 .btn.primary{ background: var(--cyan); color:#001114; }
 .btn.ghost{
@@ -190,63 +178,10 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   background: rgba(255,255,255,.03);
 }
 
-/* --- ENTERPRISE --- */
-.c-enterprise{
-  background: radial-gradient(900px 350px at 30% 10%, rgba(0,240,255,.10), transparent 65%),
-              linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.028));
-}
-.ent-icon{
-  width:44px; height:44px;
-  border-radius: 14px;
-  display:flex; align-items:center; justify-content:center;
-  background: rgba(0,240,255,.10);
-  border: 1px solid rgba(0,240,255,.18);
-  color: var(--cyan);
-  margin-bottom: 16px;
-}
-.ent-h2{ font-size: 18px; color: var(--white); margin-bottom: 10px; }
-.ent-p{ font-size: 14px; color: var(--muted); line-height:1.55; }
-.ent-list{ margin-top: 14px; list-style:none; }
-.ent-list li{
-  display:flex; gap:10px; align-items:center;
-  font-family:'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: rgba(255,255,255,.65);
-  margin-bottom: 7px;
-}
-.ent-list li::before{ content:"→"; color: var(--cyan); }
-
-/* --- GROWTH --- */
-.c-growth{
-  display:flex; align-items:center; justify-content:space-between;
-  background: linear-gradient(180deg, rgba(0,255,136,.09), rgba(255,255,255,.028));
-  border-color: rgba(0,255,136,.16);
-}
-.badge{
-  font-family:'JetBrains Mono', monospace;
-  font-size: 12px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-}
-.badge.green{ color: var(--green); border-color: rgba(0,255,136,.20); background: rgba(0,255,136,.06); }
-
-/* --- SLIDER (Pre/Post) --- */
-.slider-head{
-  margin-bottom: 14px;
-}
-.slider-head h3{
-  color: var(--white);
-  font-size: 18px;
-  margin-top: 8px;
-}
-.slider-sub{
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
-  margin-top: 8px;
-}
+/* --- SLIDER (PRE / POSLE) --- */
+.slider-head{ margin-bottom: 14px; }
+.slider-head h3{ color: var(--white); font-size: 18px; margin-top: 8px; }
+.slider-sub{ color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 8px; }
 
 .slider-container{
   position:relative;
@@ -260,20 +195,22 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   touch-action: none;
 }
 
-/* Stack images as real <img> for better quality */
 .slider-img{
   position:absolute; inset:0;
   width:100%; height:100%;
   object-fit: cover;
   object-position: center;
-  display:block;
 }
+
+/* ISPRAVLJENO: POSLE je u wrapu, PRE je pozadina */
 .after-wrap{
   position:absolute; inset:0;
-  width:50%;
+  width:50%; /* Ovo kontroliše JS */
   overflow:hidden;
   border-right: 2px solid var(--cyan);
+  z-index: 2;
 }
+
 .label{
   position:absolute;
   bottom: 14px;
@@ -283,7 +220,7 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   font-family:'JetBrains Mono', monospace;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.10);
-  z-index: 5;
+  z-index: 10;
 }
 .label.left{ left: 14px; }
 .label.right{ right: 14px; color: var(--cyan); border-color: rgba(0,240,255,.22); }
@@ -295,21 +232,12 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   width: 42px;
   height: 100%;
   transform: translateX(-50%);
-  z-index: 6;
+  z-index: 11;
   pointer-events:none;
-}
-.slider-handle::before{
-  content:"";
-  position:absolute; left:50%; top:0;
-  width:2px; height:100%;
-  transform: translateX(-50%);
-  background: var(--cyan);
-  opacity: .9;
 }
 .slider-handle::after{
   content:"↔";
-  position:absolute;
-  left:50%; top:50%;
+  position:absolute; left:50%; top:50%;
   transform: translate(-50%, -50%);
   width: 36px; height: 36px;
   border-radius: 999px;
@@ -317,86 +245,27 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
   background: rgba(0,0,0,.72);
   border: 1px solid rgba(0,240,255,.25);
   color: var(--cyan);
-  font-family:'JetBrains Mono', monospace;
   font-size: 12px;
 }
 
-/* --- VIDEO --- */
-.c-video{
-  background: radial-gradient(900px 350px at 20% 10%, rgba(255,255,255,.06), transparent 60%),
-              linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.028));
-  display:flex; flex-direction:column; justify-content:center;
-}
-.video-placeholder{
-  width:100%;
-  height: 150px;
-  border-radius: var(--r2);
-  border: 1px dashed rgba(255,255,255,.22);
-  background: rgba(255,255,255,.03);
-  display:flex; align-items:center; justify-content:center;
-  margin-top: 14px;
-}
-.play-btn{
-  width: 48px; height: 48px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,240,255,.35);
-  color: var(--cyan);
-  display:flex; align-items:center; justify-content:center;
-}
+/* --- OSTATAK --- */
+.ent-icon{ width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:rgba(0,240,255,.10); border:1px solid rgba(0,240,255,.18); color:var(--cyan); margin-bottom:16px; }
+.ent-h2{ font-size: 18px; color: var(--white); margin-bottom: 10px; }
+.ent-p{ font-size: 14px; color: var(--muted); line-height:1.55; }
+.badge{ font-family:'JetBrains Mono', monospace; font-size: 12px; padding:10px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); }
+.badge.green{ color: var(--green); border-color: rgba(0,255,136,.20); background: rgba(0,255,136,.06); }
+.video-placeholder{ width:100%; height:150px; border-radius:var(--r2); border:1px dashed rgba(255,255,255,.22); background:rgba(255,255,255,.03); display:flex; align-items:center; justify-content:center; margin-top:14px; }
+.play-btn{ width:48px; height:48px; border-radius:999px; border:1px solid rgba(0,240,255,.35); color:var(--cyan); display:flex; align-items:center; justify-content:center; }
+.project-site{ font-family:'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,240,255,.90); margin-bottom: 8px; }
+.project-h3{ font-size: 24px; color: var(--white); margin-bottom: 10px; }
+.project-p{ font-size: 14px; color: var(--muted); line-height:1.55; margin-bottom: 18px; flex-grow:1; }
+.project-tag{ display:inline-block; padding: 7px 10px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10); font-size: 10px; text-transform: uppercase; margin-right: 5px; }
 
-/* --- MINI CARDS --- */
-.c-marketing, .c-ads{
-  display:flex; flex-direction:column; justify-content:center;
-}
-.c-ads{
-  background: rgba(0,240,255,.08);
-  border-color: rgba(0,240,255,.18);
-}
-.mini-tag{
-  font-family:'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  opacity: .9;
-}
-
-/* --- PROJECTS --- */
-.project-card{ display:flex; flex-direction:column; }
-.project-site{
-  font-family:'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: rgba(0,240,255,.90);
-  margin-bottom: 8px;
-}
-.project-h3{ font-size: 24px; color: var(--white); margin-bottom: 10px; letter-spacing:-.2px; }
-.project-p{
-  font-size: 14px;
-  color: var(--muted);
-  line-height:1.55;
-  margin-bottom: 18px;
-  flex-grow:1;
-}
-.project-tags{ display:flex; gap:8px; flex-wrap:wrap; }
-.project-tag{
-  display:inline-block;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* --- RESPONSIVE --- */
 @media (max-width: 980px){
   nav{ padding: 14px 18px; }
   main{ padding: 95px 16px 70px; }
-  .bento{
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
+  .bento{ grid-template-columns: 1fr; }
   .card{ grid-column: 1 / -1 !important; grid-row: auto !important; }
-  .slider-container{ height: 360px; }
 }
 </style>
 </head>
@@ -414,182 +283,107 @@ main{ max-width: 1280px; margin: 0 auto; padding: 110px 22px 80px; }
 <main>
   <div class="bento">
 
-    <!-- HERO -->
     <section class="card c-hero reveal">
       <span class="hero-tag">DIGITAL ARCHITECT & AI SPECIALIST</span>
       <h1 class="hero-h1">Gradim sisteme koji<br>rade, i vizuale koji <em>prodaju.</em></h1>
-      <p class="hero-p">
-        Spajam inženjersku preciznost enterprise sistema sa AI obradom vizuala – od obične product fotke do premium lifestyle scene.
-      </p>
+      <p class="hero-p">Spajam inženjersku preciznost enterprise sistema sa AI obradom vizuala.</p>
       <div class="btn-row">
         <a class="btn primary" href="#projekti">Pogledaj radove</a>
-        <a class="btn ghost" href="https://github.com/tvoj-user">GitHub</a>
+        <a class="btn ghost" href="#">GitHub</a>
       </div>
     </section>
 
-    <!-- ENTERPRISE -->
     <section class="card c-enterprise reveal">
-      <div class="ent-icon" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
+      <div class="ent-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
       </div>
       <h2 class="ent-h2">Enterprise Foundation</h2>
-      <p class="ent-p">
-        Iskustvo u razvoju kompleksnih sistema – fokus na sigurnost, skalabilnost i stabilne integracije.
-      </p>
-      <ul class="ent-list">
-        <li>High-load Architectures</li>
-        <li>Third-party Integrations</li>
-        <li>Payments & Security</li>
-        <li>Clean Architecture (.NET)</li>
-      </ul>
+      <p class="ent-p">Fokus na sigurnost, skalabilnost i stabilne integracije.</p>
     </section>
 
-    <!-- GROWTH -->
     <section class="card c-growth reveal">
       <span class="badge green">● Google Ads Certified</span>
       <span class="badge">Growth Focused</span>
     </section>
 
-    <!-- AI IMAGE SLIDER -->
     <section class="card c-slider reveal">
       <div class="slider-head">
         <span class="hero-tag">AI PRODUCT TRANSFORMATION</span>
-        <h3>Pre / posle moje obrade</h3>
-        <p class="slider-sub">Levo je originalna product fotografija, desno je finalna lifestyle scena spremna za prodaju i kampanje.</p>
+        <h3>Pre / Posle obrade</h3>
       </div>
 
-      <div class="slider-container" id="slider" aria-label="Before/after slider">
-        <!-- BEFORE -->
-        <img class="slider-img" src="pre.png" alt="Original product photo (before edit)" />
+      <div class="slider-container" id="slider">
+        <img class="slider-img" src="posle.png" alt="After" />
 
-        <!-- AFTER (clipped) -->
         <div class="after-wrap" id="afterWrap">
-          <img class="slider-img" src="posle.png" alt="After my AI processing (lifestyle result)" />
+          <img class="slider-img" src="pre.png" alt="Before" />
         </div>
 
-        <!-- labels -->
-        <span class="label left">ORIGINAL PRODUCT PHOTO</span>
-        <span class="label right">AFTER MY AI PROCESSING</span>
+        <span class="label left">PRE.PNG</span>
+        <span class="label right">POSLE.PNG</span>
 
-        <!-- handle -->
-        <div class="slider-handle" id="sliderHandle" aria-hidden="true"></div>
+        <div class="slider-handle" id="sliderHandle"></div>
       </div>
     </section>
 
-    <!-- AI VIDEO -->
     <section class="card c-video reveal">
-      <span class="hero-tag" style="margin-bottom: 10px;">VIDEO AI</span>
+      <span class="hero-tag">VIDEO AI</span>
       <h2 class="ent-h2">Kinematografski AI Video</h2>
-      <p class="ent-p">Pretvaram statične product slike u kratke video reklame za društvene mreže i ads.</p>
-      <div class="video-placeholder" role="img" aria-label="Video placeholder">
-        <div class="play-btn">▶</div>
-      </div>
+      <div class="video-placeholder"><div class="play-btn">▶</div></div>
     </section>
 
-    <!-- MARKETING -->
-    <section class="card c-marketing reveal soft">
-      <span class="mini-tag" style="color: var(--green);">CONVERSION</span>
-      <h3 style="color:var(--white); font-size: 18px; margin-top:10px;">UI/UX Optimizacija</h3>
-      <p style="color:var(--muted); font-size: 13px; margin-top:10px; line-height:1.5;">
-        Brže stranice, bolji layout, jasniji CTA – fokus na prodaju.
-      </p>
+    <section class="card c-marketing reveal">
+      <h3 style="color:white; font-size: 18px;">UI/UX Optimizacija</h3>
     </section>
-
-    <!-- ADS -->
     <section class="card c-ads reveal">
-      <span class="mini-tag" style="color: var(--cyan);">CAMPAIGNS</span>
-      <h3 style="color:var(--white); font-size: 18px; margin-top:10px;">Google Ads</h3>
-      <p style="color:var(--muted); font-size: 13px; margin-top:10px; line-height:1.5;">
-        Search + Performance Max – sa čistom analitikom i optimizacijom budžeta.
-      </p>
+      <h3 style="color:white; font-size: 18px;">Google Ads</h3>
     </section>
 
-    <!-- PROJECTS TITLE -->
     <section class="card c-projects reveal" id="projekti">
-      <div style="display:flex; align-items:center; gap:16px;">
-        <h2 style="font-size: 34px; color: var(--white); font-family:'Instrument Serif'; font-style: italic;">
-          Istaknuti projekti
-        </h2>
-        <div style="height:1px; flex:1; background: rgba(255,255,255,.12);"></div>
-      </div>
+      <h2 style="font-size: 34px; color: white; font-family:'Instrument Serif'; font-style: italic;">Istaknuti projekti</h2>
     </section>
 
-    <!-- BEAR UNDERWEAR -->
     <section class="card c-bear reveal project-card">
       <span class="project-site">bearunderwear.rs</span>
       <h3 class="project-h3">Bear Underwear</h3>
-      <p class="project-p">
-        E-commerce sistem + AI pipeline za lifestyle vizuale. Fokus na brzinu, SEO strukturu i konverziju.
-      </p>
-      <div class="project-tags">
-        <span class="project-tag">WooCommerce</span>
-        <span class="project-tag">AI Content</span>
-        <span class="project-tag">Performance</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">WooCommerce</span></div>
     </section>
 
-    <!-- ARILJE LOTOS -->
     <section class="card c-lotos reveal project-card">
       <span class="project-site">ariljelotos.com</span>
       <h3 class="project-h3">Arilje Lotos</h3>
-      <p class="project-p">
-        Redizajn prodajnog toka i optimizacija mobilnog iskustva, sa modernim trackingom i checkout poboljšanjima.
-      </p>
-      <div class="project-tags">
-        <span class="project-tag">UI/UX</span>
-        <span class="project-tag">Optimization</span>
-        <span class="project-tag">CRO</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">UI/UX</span></div>
     </section>
 
-    <!-- BOOKING APP -->
     <section class="card c-booking reveal project-card">
-      <span class="project-site">github.com/booking-engine</span>
+      <span class="project-site">github.com</span>
       <h3 class="project-h3">SaaS Booking</h3>
-      <p class="project-p">
-        Custom booking rešenje bazirano na Clean Architecture principima, sa jasnim domenima i stabilnim API-jem.
-      </p>
-      <div class="project-tags">
-        <span class="project-tag">.NET 8</span>
-        <span class="project-tag">Clean Arch</span>
-        <span class="project-tag">API</span>
-      </div>
+      <div class="project-tags"><span class="project-tag">.NET 8</span></div>
     </section>
 
   </div>
 </main>
 
 <script>
-/* --- REVEAL ON SCROLL --- */
+/* REVEAL */
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) e.target.classList.add('active');
-  });
+  entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('active'); });
 }, { threshold: 0.12 });
-
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* --- CARD SOFT GLOW follow mouse (subtle, not hover animation) --- */
+/* MOUSE GLOW */
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const r = card.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width) * 100;
-    const y = ((e.clientY - r.top) / r.height) * 100;
-    card.style.setProperty('--mx', x + '%');
-    card.style.setProperty('--my', y + '%');
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%');
   });
 });
 
-/* --- SLIDER: manual + AUTO DEMO --- */
+/* SLIDER LOGIKA (ISPRAVLJENA) */
 const slider = document.getElementById('slider');
 const afterWrap = document.getElementById('afterWrap');
 const sliderHandle = document.getElementById('sliderHandle');
-
-let dragging = false;
-let userInteracted = false;
 
 function setPercent(p){
   const clamped = Math.max(0, Math.min(100, p));
@@ -597,71 +391,28 @@ function setPercent(p){
   sliderHandle.style.left = clamped + '%';
 }
 
-/* manual pointer control */
-function updateFromClientX(clientX){
-  const rect = slider.getBoundingClientRect();
-  const x = clientX - rect.left;
-  const percent = (x / rect.width) * 100;
-  setPercent(percent);
-}
-
-slider.addEventListener('pointerdown', (e) => {
-  dragging = true;
-  userInteracted = true;
-  slider.setPointerCapture(e.pointerId);
-  updateFromClientX(e.clientX);
-});
-
 slider.addEventListener('pointermove', (e) => {
-  if (!dragging) return;
-  updateFromClientX(e.clientX);
+  const rect = slider.getBoundingClientRect();
+  const percent = ((e.clientX - rect.left) / rect.width) * 100;
+  setPercent(percent);
 });
 
-slider.addEventListener('pointerup', () => { dragging = false; });
-slider.addEventListener('pointercancel', () => { dragging = false; });
-
-/* Auto demo animation (no hover effect) */
-let auto = true;
+/* Auto demo animacija */
 let t = 0;
-let dir = 1;
-
-function autoTick(){
-  // ako korisnik aktivno vuče, ne diraj
-  if (!auto || dragging) return;
-
-  // ako je korisnik već pomerao slider, pauziraj 2.5s pa nastavi
-  if (userInteracted){
-    // userInteracted ostaje true, ali auto i dalje radi
-    // samo ublažimo brzinu i damo “pauzu” kroz t step
-  }
-
-  // ping-pong 8% -> 92%
-  const minP = 8;
-  const maxP = 92;
-
-  t += dir * 0.35; // brzina (spora, premium)
-  let p = 50 + Math.sin(t * Math.PI / 180) * 42; // 8..92 otprilike
-
-  // clamp za svaki slučaj
-  p = Math.max(minP, Math.min(maxP, p));
-  setPercent(p);
-}
-
-let rafId = null;
+let auto = true;
 function loop(){
-  autoTick();
-  rafId = requestAnimationFrame(loop);
+  if(auto) {
+    t += 0.02;
+    const p = 50 + Math.sin(t) * 30;
+    setPercent(p);
+  }
+  requestAnimationFrame(loop);
 }
 loop();
 
-/* pause auto when user hovers or touches (demo-friendly) */
-slider.addEventListener('mouseenter', () => { auto = false; });
-slider.addEventListener('mouseleave', () => { auto = true; });
+slider.addEventListener('mouseenter', () => auto = false);
+slider.addEventListener('mouseleave', () => auto = true);
 
-slider.addEventListener('touchstart', () => { auto = false; }, { passive:true });
-slider.addEventListener('touchend', () => { auto = true; }, { passive:true });
-
-/* initial state */
 setPercent(50);
 </script>
 
